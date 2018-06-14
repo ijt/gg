@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on gg</title>
+    <link>https://zombiezen.github.io/gg/</link>
+    <description>Recent content in Home on gg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Jun 2018 08:48:58 -0700</lastBuildDate>
+    
+	<atom:link href="https://zombiezen.github.io/gg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gerrit</title>
+      <link>https://zombiezen.github.io/gg/workflow/gerrit/</link>
+      <pubDate>Wed, 13 Jun 2018 08:48:58 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/workflow/gerrit/</guid>
+      <description>Cloning Cloning a Gerrit repository is as simple as using the gg clone command. You can install the commit hook that adds the Change-Id line to your commit messages by using gg gerrithook.
+gg clone https://example.com/foo.git cd foo gg gerrithook  Making Changes Every Gerrit change should be on a separate branch. gg branch will automatically handle setting the branch&amp;rsquo;s upstream, and gg mail automates pushing the change to the server.</description>
+    </item>
+    
+  </channel>
+</rss>
