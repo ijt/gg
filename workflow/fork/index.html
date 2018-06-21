@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fork and Pull - gg</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Patua+One" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/gg/style.css">
+  
+</head>
+<body class="page">
+  <div class="top">
+    <h1 class="site_title"><a class="site_title_link" href="/">gg</a></h1>
+    <div class="subtitle">Git like Mercurial</div>
+    <nav class="main_nav">
+      <ul class="main_nav_list">
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="/gg/">Home</a>
+        </li>
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="/gg/workflow/">Workflows</a>
+        </li>
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="/gg/cmd/">Commands</a>
+        </li>
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="https://github.com/zombiezen/gg">GitHub</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    
+<h1 class="pagetitle">Fork and Pull</h1>
+
+
+<p>gg supports the fork-and-pull model of development <a href="https://guides.github.com/introduction/flow/">popularized by
+GitHub</a>.</p>
+
+<h2 id="cloning">Cloning</h2>
+
+<p>When setting up your working copy, you will first clone the repository as
+normal, then add your fork as another remote. gg respects the
+<a href="https://git-scm.com/docs/git-config#git-config-remotepushDefault"><code>remote.pushDefault</code></a> Git configuration option on pushes, which reduces the
+amount of typing you need to push your commits.</p>
+
+<pre><code class="language-shell">gg clone https://example.com/foo.git
+cd foo
+git remote add myfork https://example.com/myfork/foo.git
+git config remote.pushDefault myfork
+</code></pre>
+
+<p>Replace the URLs and the name <code>myfork</code> above as needed.</p>
+
+<h2 id="making-changes">Making Changes</h2>
+
+<p>Every change should be on a separate branch. <code>gg branch</code> will automatically
+handle setting the branch&rsquo;s upstream. If you configure your working copy as
+detailed in the Cloning section, <code>gg push</code> will automatically push your local
+branch to your fork with the same branch name.</p>
+
+<pre><code class="language-shell">gg branch myfeature
+# hack hack hack
+gg commit -m &quot;Added a feature&quot;
+gg push
+</code></pre>
+
+<p>To make changes after code review, simply push more commits to your branch and
+run <code>gg push</code> again.</p>
+
+<pre><code class="language-shell"># hack hack hack
+gg commit -m &quot;Addressed code review comments&quot;
+gg push
+</code></pre>
+
+<h3 id="syncing-your-work-with-the-upstream-branch">Syncing Your Work with the Upstream Branch</h3>
+
+<p>If the upstream branch (usually <code>master</code>) changed, then you can use <code>gg merge</code>
+to merge in commits.</p>
+
+<pre><code class="language-shell">gg pull &amp;&amp; gg merge
+</code></pre>
+
+<p>If there are no conflicts or test breakages, you can run <code>gg commit</code> to commit
+the merge.</p>
+
+<h3 id="syncing-your-work-with-your-fork-s-branch">Syncing Your Work with your Fork&rsquo;s Branch</h3>
+
+<p>If your fork&rsquo;s branch changes (for example, if a maintainer adds commits), then
+first you need to download the new commits from your fork using <code>gg pull</code>.</p>
+
+<pre><code class="language-shell">gg pull -r CURRENT_BRANCH myfork
+</code></pre>
+
+<p>Replace <code>CURRENT_BRANCH</code> with the name of your current branch and <code>myfork</code> with
+the name of the remote you added in the Cloning section.</p>
+
+<p>Once you&rsquo;ve downloaded the commits, you will need to either merge or rebase your
+local commits. Merging will create a new commit that merges the two streams of
+work, whereas rebasing will recreate your changes on top of the downloaded
+commits.</p>
+
+<p>To create a merge commit:</p>
+
+<pre><code class="language-shell">gg merge FETCH_HEAD
+# Resolve any conflicts, run tests.
+gg commit
+</code></pre>
+
+<p>Or to rebase your commits onto the downloaded changes:</p>
+
+<pre><code class="language-shell">gg rebase -base=FETCH_HEAD -dst=FETCH_HEAD
+</code></pre>
+
+<h3 id="switching-among-changes">Switching Among Changes</h3>
+
+<p>You can list all of your branches with:</p>
+
+<pre><code class="language-shell">gg branch
+</code></pre>
+
+<p>You can use <code>gg update</code> to switch to a different branch.</p>
+
+<pre><code class="language-shell">gg update myfeature
+gg update master
+</code></pre>
+
+
+  </div>
+  <footer class="pagefooter">
+    <p>Copyright &copy; 2018 Google LLC</p>
+    <p>gg is not an official Google product. All content released under an <a href="https://github.com/zombiezen/gg/blob/master/LICENSE" target="_blank">Apache 2.0 License</a>.</p>
+  </footer>
+</body>
+</html>

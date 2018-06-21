@@ -12,12 +12,24 @@
     
     
     <item>
+      <title>Fork and Pull</title>
+      <link>https://zombiezen.github.io/gg/workflow/fork/</link>
+      <pubDate>Thu, 21 Jun 2018 13:29:21 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/workflow/fork/</guid>
+      <description>gg supports the fork-and-pull model of development popularized by GitHub.
+Cloning When setting up your working copy, you will first clone the repository as normal, then add your fork as another remote. gg respects the remote.pushDefault Git configuration option on pushes, which reduces the amount of typing you need to push your commits.
+gg clone https://example.com/foo.git cd foo git remote add myfork https://example.com/myfork/foo.git git config remote.pushDefault myfork  Replace the URLs and the name myfork above as needed.</description>
+    </item>
+    
+    <item>
       <title>Gerrit</title>
       <link>https://zombiezen.github.io/gg/workflow/gerrit/</link>
       <pubDate>Wed, 13 Jun 2018 08:48:58 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/workflow/gerrit/</guid>
-      <description>Cloning Cloning a Gerrit repository is as simple as using the gg clone command. You can install the commit hook that adds the Change-Id line to your commit messages by using gg gerrithook.
+      <description>gg has a number of features to support sending changes to the Gerrit code review tool.
+Cloning Cloning a Gerrit repository is as simple as using the gg clone command. You can install the commit hook that adds the Change-Id line to your commit messages by using gg gerrithook.
 gg clone https://example.com/foo.git cd foo gg gerrithook  Making Changes Every Gerrit change should be on a separate branch. gg branch will automatically handle setting the branch&amp;rsquo;s upstream, and gg mail automates pushing the change to the server.</description>
     </item>
     
