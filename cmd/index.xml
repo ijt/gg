@@ -36,7 +36,7 @@ Creating or updating to a branch causes it to be marked as active. When a commit
       <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/cmd/clone/</guid>
-      <description> Flags -b branch -branch branch branch to check out -gerrit install Gerrit hook -gerrit-hook-url string URL of hook script to download  </description>
+      <description> Options -b branch -branch branch branch to check out -gerrit install Gerrit hook -gerrit-hook-url string URL of hook script to download  </description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@ Creating or updating to a branch causes it to be marked as active. When a commit
       <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/cmd/commit/</guid>
-      <description> Flags -amend amend the parent of the working directory -m message use text as commit message  </description>
+      <description> Options -amend amend the parent of the working directory -m message use text as commit message  </description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@ Creating or updating to a branch causes it to be marked as active. When a commit
       <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/cmd/diff/</guid>
-      <description> Flags -b -ignore-space-change ignore changes in amount of whitespace -B -ignore-blank-lines ignore changes whose lines are all blank -c rev change made by revision -U string number of lines of context to show -r rev revision -stat output diffstat-style summary of changes -w -ignore-all-space ignore whitespace when comparing lines -Z -ignore-space-at-eol ignore changes in whitespace at EOL -M percent report new files with the set percentage of similarity to a removed file as renamed -C percent report new files with the set percentage of similarity as copied -copies-unmodified whether to check unmodified files when detecting copies (can be expensive)  </description>
+      <description> Options -b -ignore-space-change ignore changes in amount of whitespace -B -ignore-blank-lines ignore changes whose lines are all blank -c rev change made by revision -U string number of lines of context to show -r rev revision -stat output diffstat-style summary of changes -w -ignore-all-space ignore whitespace when comparing lines -Z -ignore-space-at-eol ignore changes in whitespace at EOL -M percent report new files with the set percentage of similarity to a removed file as renamed -C percent report new files with the set percentage of similarity as copied -copies-unmodified whether to check unmodified files when detecting copies (can be expensive)  </description>
     </item>
     
     <item>
@@ -64,7 +64,7 @@ Creating or updating to a branch causes it to be marked as active. When a commit
       
       <guid>https://zombiezen.github.io/gg/cmd/evolve/</guid>
       <description> evolve compares HEAD with the ancestors of the given destination. If evolve finds any ancestors of the destination have the same Gerrit change ID as diverging ancestors of HEAD, it rebases the descendants of the latest shared change onto the corresponding commit in the destination.
-Flags -d ref -dst ref ref to compare with (defaults to upstream) -l -list list commits with match change IDs  </description>
+Options -d ref -dst ref ref to compare with (defaults to upstream) -l -list list commits with match change IDs  </description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@ Flags -d ref -dst ref ref to compare with (defaults to upstream) -l -list list c
       <description> The Gerrit change ID hook is a commit message hook which automatically inserts a globally unique Change-Id tag in the footer of a commit message.
 gerrithook downloads the hook script from a public Gerrit server.
 More details at https://gerrit-review.googlesource.com/hooks/commit-msg
-Flags -url string URL of hook script to download  </description>
+Options -url string URL of hook script to download  </description>
     </item>
     
     <item>
@@ -104,7 +104,7 @@ Unlike git rebase -i, continuing a histedit will automatically amend the current
       <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/cmd/log/</guid>
-      <description> Flags -follow follow file history across copies and renames -follow-first only follow the first parent of merge commits -graph -G show the revision DAG -r rev show the specified revision or range -reverse reverse order of commits -stat include diffstat-style summary of each commit  </description>
+      <description> Options -follow follow file history across copies and renames -follow-first only follow the first parent of merge commits -graph -G show the revision DAG -r rev show the specified revision or range -reverse reverse order of commits -stat include diffstat-style summary of each commit  </description>
     </item>
     
     <item>
@@ -113,7 +113,7 @@ Unlike git rebase -i, continuing a histedit will automatically amend the current
       <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/cmd/mail/</guid>
-      <description> Flags -allow-dirty allow mailing when working copy has uncommitted changes -d branch -dest branch -for branch destination branch -r rev source revision -R email -reviewer email reviewer email -CC email -cc email emails to CC -notify string who to send email notifications to; one of &amp;#34;none&amp;#34;, &amp;#34;owner&amp;#34;, &amp;#34;owner_reviewers&amp;#34;, or &amp;#34;all&amp;#34; -notify-to email email to send notification -notify-cc email email to CC notification -notify-bcc email email to BCC notification -m message use text as comment message -p -publish-comments publish draft comments  </description>
+      <description> Options -allow-dirty allow mailing when working copy has uncommitted changes -d branch -dest branch -for branch destination branch -r rev source revision -R email -reviewer email reviewer email -CC email -cc email emails to CC -notify string who to send email notifications to; one of &amp;#34;none&amp;#34;, &amp;#34;owner&amp;#34;, &amp;#34;owner_reviewers&amp;#34;, or &amp;#34;all&amp;#34; -notify-to email email to send notification -notify-cc email email to CC notification -notify-bcc email email to BCC notification -m message use text as comment message -p -publish-comments publish draft comments  </description>
     </item>
     
     <item>
@@ -122,7 +122,7 @@ Unlike git rebase -i, continuing a histedit will automatically amend the current
       <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/cmd/merge/</guid>
-      <description> Flags -r rev revision to merge -abort abort the ongoing merge  </description>
+      <description> Options -r rev revision to merge -abort abort the ongoing merge  </description>
     </item>
     
     <item>
@@ -154,7 +154,7 @@ If no remote reference is given and a branch is currently checked out, then the 
       <guid>https://zombiezen.github.io/gg/cmd/rebase/</guid>
       <description> Rebasing will replay a set of changes on top of the destination revision and set the current branch to the final revision.
 If neither --src or --base is specified, it acts as if --base=@{upstream} was specified.
-Flags -base rev rebase everything from branching point of specified revision -dst rev rebase onto the specified revision -src rev rebase the specified revision and descendants -abort abort an interrupted rebase -continue continue an interrupted rebase  </description>
+Options -base rev rebase everything from branching point of specified revision -dst rev rebase onto the specified revision -src rev rebase the specified revision and descendants -abort abort an interrupted rebase -continue continue an interrupted rebase  </description>
     </item>
     
     <item>
@@ -163,7 +163,7 @@ Flags -base rev rebase everything from branching point of specified revision -ds
       <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/cmd/remove/</guid>
-      <description> Flags -after record delete for missing files -f -force forget added files, delete modified files -r remove files under any directory specified  </description>
+      <description> Options -after record delete for missing files -f -force forget added files, delete modified files -r remove files under any directory specified  </description>
     </item>
     
     <item>
@@ -172,7 +172,7 @@ Flags -base rev rebase everything from branching point of specified revision -ds
       <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/cmd/revert/</guid>
-      <description> Flags -all revert all changes when no arguments given -r rev revert to specified revision  </description>
+      <description> Options -all revert all changes when no arguments given -r rev revert to specified revision  </description>
     </item>
     
     <item>
@@ -190,7 +190,7 @@ Flags -base rev rebase everything from branching point of specified revision -ds
       <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/cmd/update/</guid>
-      <description> Flags -m -merge merge uncommitted changes -r rev revision  </description>
+      <description> Options -m -merge merge uncommitted changes -r rev revision  </description>
     </item>
     
     <item>
@@ -201,7 +201,7 @@ Flags -base rev rebase everything from branching point of specified revision -ds
       <guid>https://zombiezen.github.io/gg/cmd/upstream/</guid>
       <description> If no positional arguments are given, the branch&amp;rsquo;s upstream branch is printed to stdout (defaulting to the current branch if none given).
 If a ref argument is given, then the branch&amp;rsquo;s upstream branch (specified by branch.*.remote and branch.*.merge configuration settings) will be set to the given value.
-Flags -b branch branch to query or modify  </description>
+Options -b branch branch to query or modify  </description>
     </item>
     
   </channel>
