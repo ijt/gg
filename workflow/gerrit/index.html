@@ -33,10 +33,15 @@
   <div class="main">
     
 <h1 class="pagetitle">Gerrit</h1>
+<p>Some popular open source projects use <a href="https://www.gerritcodereview.com/">Gerrit</a>, a code review tool, to
+manage code contributions. Examples include <a href="https://golang.org/">Go</a>, <a href="https://source.android.com/">Android</a>, and
+<a href="https://www.chromium.org/">Chromium</a>. Gerrit has a somewhat unique model for receiving changes that
+involves amending commits and pushing to specially formatted ref names.
+Developers using Gerrit usually build shortcuts on top of Git to manage this
+complexity, but gg has built-in support for Gerrit. gg makes working with
+Gerrit as easy as other Git workflows.</p>
 
-
-<p>gg has a number of features to support sending changes to the <a href="https://www.gerritcodereview.com/">Gerrit</a> code
-review tool.</p>
+<p></p>
 
 <h2 id="cloning">Cloning</h2>
 
@@ -128,7 +133,6 @@ branch up-to-date.</p>
 <pre><code class="language-shell">gg update myfeature
 gg update master
 </code></pre>
-
 
   </div>
   <footer class="pagefooter">

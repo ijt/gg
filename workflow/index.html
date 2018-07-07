@@ -33,19 +33,71 @@
   <div class="main">
     
 <h1 class="pagetitle">Workflows</h1><div class="list_intro_content">
-<p>This section details common ways to use gg in different situations.</p>
+<p>This is a collection of guides aimed at showing you how to use gg&rsquo;s commands.
+<strong>If you are new to version control, start with <a href="/gg/workflow/local/">Working Locally</a></strong>. The other
+guides show how to share your work with others; the one you need depends on how
+the project you are contributing to accepts changes.</p>
+
+<p>Note: gg is a command-line program, so these guides assume you know how to use
+the command line for your platform.</p>
 
 </div>
 
 
-<ul class="page_list">
-  <li class="page_list_item"><a href="/gg/workflow/fork/">Fork and Pull</a></li>
+<div class="page_list workflows_page_list">
+  <article class="page_list_item">
+  <h2 class="page_list_title"><a href="/gg/workflow/local/">Working Locally</a></h2>
+  <div class="page_list_summary"><p>Whether you are working by yourself or with others, the workflow for making
+changes on your local machine stays the same. This guide is primarily aimed at
+those who are new to version control, but is also useful for seasoned version
+control users trying to see how gg stacks up to their current tool.</p>
 
-  <li class="page_list_item"><a href="/gg/workflow/shared/">Shared Repository</a></li>
+<p></p></div>
+  <div class="page_list_readmore"><a href="/gg/workflow/local/">Read more&hellip;</a></div>
+</article>
 
-  <li class="page_list_item"><a href="/gg/workflow/gerrit/">Gerrit</a></li>
+  <article class="page_list_item">
+  <h2 class="page_list_title"><a href="/gg/workflow/fork/">Fork and Pull</a></h2>
+  <div class="page_list_summary"><p>The fork and pull model <a href="https://guides.github.com/introduction/flow/">popularized by GitHub</a> is the most common way
+to use gg. When using this model, the project has a primary repository that
+only the maintainers of the project have write access to.  Contributors make
+changes by sharing a cloned repository (called the fork) with new branches.
+Contributors send pull requests to maintainers, who then review the code and
+merge in the changes.</p>
 
-</ul>
+<p></p></div>
+  <div class="page_list_readmore"><a href="/gg/workflow/fork/">Read more&hellip;</a></div>
+</article>
+
+  <article class="page_list_item">
+  <h2 class="page_list_title"><a href="/gg/workflow/shared/">Shared Repository</a></h2>
+  <div class="page_list_summary"><p>In the <a href="https://help.github.com/articles/about-collaborative-development-models/">shared repository model</a>, the source of truth is a single
+shared repository. This pattern is popular with individuals and smaller teams.
+Each developer clones to a repository on their own machine and makes their
+changes. When they are ready to share, they push to a branch on the single
+shared repository. If they are using pull requests, each change goes onto a
+distinct <a href="https://help.github.com/articles/about-branches/">branch</a> for review. Otherwise, usually commits go directly to the
+default branch (usually <code>master</code>).</p>
+
+<p></p></div>
+  <div class="page_list_readmore"><a href="/gg/workflow/shared/">Read more&hellip;</a></div>
+</article>
+
+  <article class="page_list_item">
+  <h2 class="page_list_title"><a href="/gg/workflow/gerrit/">Gerrit</a></h2>
+  <div class="page_list_summary"><p>Some popular open source projects use <a href="https://www.gerritcodereview.com/">Gerrit</a>, a code review tool, to
+manage code contributions. Examples include <a href="https://golang.org/">Go</a>, <a href="https://source.android.com/">Android</a>, and
+<a href="https://www.chromium.org/">Chromium</a>. Gerrit has a somewhat unique model for receiving changes that
+involves amending commits and pushing to specially formatted ref names.
+Developers using Gerrit usually build shortcuts on top of Git to manage this
+complexity, but gg has built-in support for Gerrit. gg makes working with
+Gerrit as easy as other Git workflows.</p>
+
+<p></p></div>
+  <div class="page_list_readmore"><a href="/gg/workflow/gerrit/">Read more&hellip;</a></div>
+</article>
+
+</div>
 
 
   </div>

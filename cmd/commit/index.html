@@ -39,6 +39,14 @@
 
 <p></p>
 
+<p>Commits changes to the given files into the repository. If no files
+are given, then all changes reported by <code>gg status</code> will be
+committed.</p>
+
+<p>Unlike Git, gg does not require you to stage your changes into the
+index. This approximates the behavior of <code>git commit -a</code>, but
+this command will only change the index if the commit succeeds.</p>
+
 <h2 id="options">Options</h2>
 
 <dl class="flag_list">

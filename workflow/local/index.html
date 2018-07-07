@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Working Locally - gg</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Patua+One" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/gg/style.css">
+  
+</head>
+<body class="page">
+  <div class="top">
+    <h1 class="site_title"><a class="site_title_link" href="/">gg</a></h1>
+    <div class="subtitle">Git like Mercurial</div>
+    <nav class="main_nav">
+      <ul class="main_nav_list">
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="/gg/">Home</a>
+        </li>
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="/gg/workflow/">Workflows</a>
+        </li>
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="/gg/cmd/">Commands</a>
+        </li>
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="https://github.com/zombiezen/gg">GitHub</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    
+<h1 class="pagetitle">Working Locally</h1>
+<p>Whether you are working by yourself or with others, the workflow for making
+changes on your local machine stays the same. This guide is primarily aimed at
+those who are new to version control, but is also useful for seasoned version
+control users trying to see how gg stacks up to their current tool.</p>
+
+<p></p>
+
+<h2 id="creating-a-repository">Creating a Repository</h2>
+
+<p>To create an empty repository, you use <a href="/gg/cmd/init/"><code>gg init</code></a>.</p>
+
+<pre><code class="language-shell">gg init foo
+cd foo
+</code></pre>
+
+<p>This will create a new folder <code>foo</code> with a <code>.git</code> directory inside it.</p>
+
+<h2 id="adding-files">Adding Files</h2>
+
+<p>Let&rsquo;s say you create a file inside your new repository:</p>
+
+<pre><code class="language-shell">nano my-thoughts.txt
+</code></pre>
+
+<p>gg will not track <code>my-thoughts.txt</code> until you explicitly tell it to, using <a href="/gg/cmd/add/"><code>gg
+add</code></a>:</p>
+
+<pre><code class="language-shell">gg add my-thoughts.txt
+</code></pre>
+
+<p>You can then save your work to the repository using <a href="/gg/cmd/commit/"><code>gg commit</code></a>. This will
+create a new <a href="https://git-scm.com/docs/gitglossary#def_commit">Git commit</a>.</p>
+
+<pre><code class="language-shell">gg commit -m &quot;Started thinking&quot;
+</code></pre>
+
+<p>Every commit has a message. A commit message should be a short, human-readable
+summary of what you did in that commit. A quick internet search for &ldquo;good commit
+messages&rdquo; includes advice on how to write a good commit message and why this is
+important, especially when collaborating with others.</p>
+
+<h2 id="modifying-files">Modifying Files</h2>
+
+<p>Let&rsquo;s say you add more to <code>my-thoughts.txt</code>. You can get a short summary of the
+files that have changed by using <a href="/gg/cmd/status/"><code>gg status</code></a>:</p>
+
+<pre><code class="language-shell">gg status
+</code></pre>
+
+<p>This would show something like:</p>
+
+<pre><code>M my-thoughts.txt
+</code></pre>
+
+<p>If you want a more detailed view of your changes, you can use <a href="/gg/cmd/diff/"><code>gg diff</code></a> (short for differences).</p>
+
+<pre><code class="language-shell">gg diff
+</code></pre>
+
+<p>This would show something like:</p>
+
+<pre><code>diff --git a/my-thoughts.txt b/my-thoughts.txt
+--- a/my-thoughts.txt
++++ b/my-thoughts.txt
+@@ -1,1 +1,2 @@
+ Hello, World!
++I'm learning gg!
+</code></pre>
+
+<p>When you&rsquo;re ready to make a new commit, you run <code>gg commit</code> like before.</p>
+
+<pre><code class="language-shell">gg commit -m &quot;Documented my experience in following a gg tutorial&quot;
+</code></pre>
+
+<p>Long-time Git users will notice that we did not have to &ldquo;add&rdquo; the files before
+committing. This is intentional: gg makes every effort to emulate Mercurial&rsquo;s
+index-less model to reduce the number of steps in common workflows. To commit
+only certain files, just pass them as arguments to <code>gg commit</code>. For more
+advanced partial commits, use <code>git add</code> and <code>git commit</code> directly.</p>
+
+<h2 id="removing-files">Removing Files</h2>
+
+<p>Sometimes, you will want to remove a file that has been tracked by version
+control. To do this, you run <a href="/gg/cmd/remove/"><code>gg rm</code></a> followed by <code>gg commit</code>.</p>
+
+<pre><code class="language-shell">gg rm my-thoughts.txt
+gg commit -m &quot;Kept my thoughts to myself&quot;
+</code></pre>
+
+<p>Don&rsquo;t worry, the file is still in your repository history. Let&rsquo;s see how to use
+gg to go back in time.</p>
+
+<h2 id="examining-history">Examining History</h2>
+
+<p>The primary motivation for version control is to be able to inspect previous
+revisions of files. gg includes several commands to access the repository&rsquo;s
+data.</p>
+
+<p>The first command is <a href="/gg/cmd/log/"><code>gg log</code></a>.</p>
+
+<pre><code class="language-shell">gg log
+</code></pre>
+
+<p><code>gg log</code> will show you a list of all the commits you have made up to this point.
+Each commit is identified by a long hexadecimal string called the <a href="https://git-scm.com/docs/gitglossary#def_hash">hash</a>. You
+can use the hash to reference the commit in other commands or when talking with
+other people.</p>
+
+<p>If you want to see the changes made in a single commit, you can pass the <code>-c</code>
+flag to <code>gg diff</code> with a hash you found from the log.</p>
+
+<pre><code class="language-shell">gg diff -c a199be2
+</code></pre>
+
+<p>You can also see all the changes made since a particular commit using <code>-r</code>:</p>
+
+<pre><code class="language-shell">gg diff -r a199be2
+</code></pre>
+
+<p>If you want to check out what the repository looked like at a particular commit,
+you can use the <a href="/gg/cmd/update/"><code>gg update</code></a>, also known as <code>checkout</code>.</p>
+
+<pre><code class="language-shell">gg checkout -r a199be2
+</code></pre>
+
+<p>When you&rsquo;re done looking, you can go back to your latest work using <code>checkout</code>.</p>
+
+<pre><code class="language-shell">gg checkout -r master
+</code></pre>
+
+<p><code>master</code> is the name of the default <a href="https://help.github.com/articles/about-branches/">branch</a> that was created when you ran <code>gg
+init</code>. You can use the name of a branch instead of a commit hash in any gg
+command that takes in a commit to indicate the latest commit on that branch.</p>
+
+<p>Finally, if you realize you made a mistake (perhaps you want <code>my-thoughts.txt</code>
+back), you can use <code>gg revert</code> to bring files back to their state at a given
+commit, then use <code>gg commit</code> to save your work as normal.</p>
+
+<pre><code class="language-shell">gg revert -r a199be2 my-thoughts.txt
+gg commit -m &quot;Brought back my thoughts&quot;
+</code></pre>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>If you are using gg just by yourself, this may be all you need to know. Version
+control lets you keep track of how your files have changed over time, and lets
+you bring back files you may have accidentally deleted. However, version control
+is an important tool for being able to share these changes with others. Once
+you&rsquo;ve gotten used to the commands in this guide, take a look at the other
+<a href="/gg/workflow/">workflows</a> to see how to share your work with others. You may also want to
+look at the [command reference][].</p>
+
+  </div>
+  <footer class="pagefooter">
+    <p>Copyright &copy; 2018 Google LLC</p>
+    <p>gg is not an official Google product. All content released under an <a href="https://github.com/zombiezen/gg/blob/master/LICENSE" target="_blank">Apache 2.0 License</a>.</p>
+  </footer>
+</body>
+</html>

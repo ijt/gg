@@ -12,14 +12,33 @@
     
     
     <item>
+      <title>Working Locally</title>
+      <link>https://zombiezen.github.io/gg/workflow/local/</link>
+      <pubDate>Sat, 07 Jul 2018 13:49:05 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/workflow/local/</guid>
+      <description>&lt;p&gt;Whether you are working by yourself or with others, the workflow for making
+changes on your local machine stays the same. This guide is primarily aimed at
+those who are new to version control, but is also useful for seasoned version
+control users trying to see how gg stacks up to their current tool.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Fork and Pull</title>
       <link>https://zombiezen.github.io/gg/workflow/fork/</link>
       <pubDate>Thu, 21 Jun 2018 13:29:21 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/workflow/fork/</guid>
-      <description>gg supports the fork-and-pull model of development popularized by GitHub.
-Cloning When setting up your working copy, you will first clone the repository as normal, then add your fork as another remote. gg respects the remote.pushDefault Git configuration option on pushes, which reduces the amount of typing you need to push your commits.
-gg clone https://example.com/foo.git cd foo git remote add myfork https://example.com/myfork/foo.git git config remote.pushDefault myfork  Replace the URLs and the name myfork above as needed.</description>
+      <description>&lt;p&gt;The fork and pull model &lt;a href=&#34;https://guides.github.com/introduction/flow/&#34;&gt;popularized by GitHub&lt;/a&gt; is the most common way
+to use gg. When using this model, the project has a primary repository that
+only the maintainers of the project have write access to.  Contributors make
+changes by sharing a cloned repository (called the fork) with new branches.
+Contributors send pull requests to maintainers, who then review the code and
+merge in the changes.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,7 +47,15 @@ gg clone https://example.com/foo.git cd foo git remote add myfork https://exampl
       <pubDate>Sat, 07 Jul 2018 08:21:47 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/workflow/shared/</guid>
-      <description>gg supports the shared repository model of development used by individuals and smaller teams. In this workflow, the source of truth is a single shared repository. Each developer clones to a repository on their own machine and makes their changes. When they are ready to share, they push to a branch on the single shared repository. If they are using pull requests, each change goes onto a branch, which then gets reviewed.</description>
+      <description>&lt;p&gt;In the &lt;a href=&#34;https://help.github.com/articles/about-collaborative-development-models/&#34;&gt;shared repository model&lt;/a&gt;, the source of truth is a single
+shared repository. This pattern is popular with individuals and smaller teams.
+Each developer clones to a repository on their own machine and makes their
+changes. When they are ready to share, they push to a branch on the single
+shared repository. If they are using pull requests, each change goes onto a
+distinct &lt;a href=&#34;https://help.github.com/articles/about-branches/&#34;&gt;branch&lt;/a&gt; for review. Otherwise, usually commits go directly to the
+default branch (usually &lt;code&gt;master&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,9 +64,15 @@ gg clone https://example.com/foo.git cd foo git remote add myfork https://exampl
       <pubDate>Wed, 13 Jun 2018 08:48:58 -0700</pubDate>
       
       <guid>https://zombiezen.github.io/gg/workflow/gerrit/</guid>
-      <description>gg has a number of features to support sending changes to the Gerrit code review tool.
-Cloning Cloning a Gerrit repository is as simple as using the gg clone command. You can install the commit hook that adds the Change-Id line to your commit messages by using gg gerrithook.
-gg clone https://example.com/foo.git cd foo gg gerrithook  Making Changes Every Gerrit change should be on a separate branch. gg branch will automatically handle setting the branch&amp;rsquo;s upstream, and gg mail automates pushing the change to the server.</description>
+      <description>&lt;p&gt;Some popular open source projects use &lt;a href=&#34;https://www.gerritcodereview.com/&#34;&gt;Gerrit&lt;/a&gt;, a code review tool, to
+manage code contributions. Examples include &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://source.android.com/&#34;&gt;Android&lt;/a&gt;, and
+&lt;a href=&#34;https://www.chromium.org/&#34;&gt;Chromium&lt;/a&gt;. Gerrit has a somewhat unique model for receiving changes that
+involves amending commits and pushing to specially formatted ref names.
+Developers using Gerrit usually build shortcuts on top of Git to manage this
+complexity, but gg has built-in support for Gerrit. gg makes working with
+Gerrit as easy as other Git workflows.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
