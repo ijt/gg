@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Workflows - gg</title>
+  <title>gg evolve - gg</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Patua+One" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/gg/style.css">
   
@@ -17,7 +17,7 @@
         <li class="main_nav_item">
           <a class="main_nav_link" href="/gg/">Home</a>
         </li>
-        <li class="main_nav_item active">
+        <li class="main_nav_item">
           <a class="main_nav_link" href="/gg/workflow/">Workflows</a>
         </li>
         <li class="main_nav_item">
@@ -32,18 +32,29 @@
   </div>
   <div class="main">
     
-<h1 class="pagetitle">Workflows</h1><div class="list_intro_content">
-<p>This section details common ways to use gg in different situations.</p>
+<h1 class="pagetitle">gg evolve</h1>
+<p class="command_usage">gg evolve [-l] [-d DST]</p>
+<p class="command_synopsis">sync with Gerrit changes in upstream</p>
 
-</div>
 
 
-<ul class="page_list">
-  <li class="page_list_item"><a href="/gg/workflow/fork/">Fork and Pull</a></li>
 
-  <li class="page_list_item"><a href="/gg/workflow/gerrit/">Gerrit</a></li>
+<p>evolve compares HEAD with the ancestors of the given destination. If
+evolve finds any ancestors of the destination have the same Gerrit
+change ID as diverging ancestors of HEAD, it rebases the descendants
+of the latest shared change onto the corresponding commit in the
+destination.</p>
 
-</ul>
+<h2 id="flags">Flags</h2>
+
+<dl class="flag_list">
+    <dt>-d ref</dt>
+    <dt>-dst ref</dt>
+    <dd>ref to compare with (defaults to upstream)</dd>
+    <dt>-l</dt>
+    <dt>-list</dt>
+    <dd>list commits with match change IDs</dd>
+</dl>
 
 
   </div>

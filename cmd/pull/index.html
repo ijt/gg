@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Workflows - gg</title>
+  <title>gg pull - gg</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Patua+One" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/gg/style.css">
   
@@ -17,7 +17,7 @@
         <li class="main_nav_item">
           <a class="main_nav_link" href="/gg/">Home</a>
         </li>
-        <li class="main_nav_item active">
+        <li class="main_nav_item">
           <a class="main_nav_link" href="/gg/workflow/">Workflows</a>
         </li>
         <li class="main_nav_item">
@@ -32,18 +32,34 @@
   </div>
   <div class="main">
     
-<h1 class="pagetitle">Workflows</h1><div class="list_intro_content">
-<p>This section details common ways to use gg in different situations.</p>
+<h1 class="pagetitle">gg pull</h1>
+<p class="command_usage">gg pull [-u] [-r REF] [SOURCE]</p>
+<p class="command_synopsis">pull changes from the specified source</p>
 
-</div>
 
 
-<ul class="page_list">
-  <li class="page_list_item"><a href="/gg/workflow/fork/">Fork and Pull</a></li>
 
-  <li class="page_list_item"><a href="/gg/workflow/gerrit/">Gerrit</a></li>
+<p>The fetched reference is written to FETCH_HEAD.</p>
 
-</ul>
+<p>If no source repository is given and a branch with a remote tracking
+branch is currently checked out, then that remote is used. Otherwise,
+the remote called &ldquo;origin&rdquo; is used.</p>
+
+<p>If no remote reference is given and a branch is currently checked out,
+then the branch&rsquo;s remote tracking branch is used or the branch with
+the same name if the branch has no remote tracking branch. Otherwise,
+&ldquo;HEAD&rdquo; is used.</p>
+
+<h2 id="flags">Flags</h2>
+
+<dl class="flag_list">
+    <dt>-r ref</dt>
+    <dd>remote reference intended to be pulled</dd>
+    <dt>-tags</dt>
+    <dd>pull all tags from remote</dd>
+    <dt>-u</dt>
+    <dd>update to new head if new descendants were pulled</dd>
+</dl>
 
 
   </div>

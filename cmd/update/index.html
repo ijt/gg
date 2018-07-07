@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Workflows - gg</title>
+  <title>gg update - gg</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Patua+One" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/gg/style.css">
   
@@ -17,7 +17,7 @@
         <li class="main_nav_item">
           <a class="main_nav_link" href="/gg/">Home</a>
         </li>
-        <li class="main_nav_item active">
+        <li class="main_nav_item">
           <a class="main_nav_link" href="/gg/workflow/">Workflows</a>
         </li>
         <li class="main_nav_item">
@@ -32,18 +32,30 @@
   </div>
   <div class="main">
     
-<h1 class="pagetitle">Workflows</h1><div class="list_intro_content">
-<p>This section details common ways to use gg in different situations.</p>
+<h1 class="pagetitle">gg update</h1>
+<p class="command_usage">gg update [-m] [[-r] REV]</p>
+<p class="command_synopsis">update working directory (or switch revisions)</p>
 
-</div>
-
-
-<ul class="page_list">
-  <li class="page_list_item"><a href="/gg/workflow/fork/">Fork and Pull</a></li>
-
-  <li class="page_list_item"><a href="/gg/workflow/gerrit/">Gerrit</a></li>
-
+<div class="command_alias_heading">Aliases:</div>
+<ul class="command_alias_list">
+  
+  <li class="command_alias">up</li>
+  <li class="command_alias">checkout</li>
+  <li class="command_alias">co</li>
 </ul>
+
+
+
+
+<h2 id="flags">Flags</h2>
+
+<dl class="flag_list">
+    <dt>-m</dt>
+    <dt>-merge</dt>
+    <dd>merge uncommitted changes</dd>
+    <dt>-r rev</dt>
+    <dd>revision</dd>
+</dl>
 
 
   </div>

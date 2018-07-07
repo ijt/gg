@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Workflows - gg</title>
+  <title>gg branch - gg</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Patua+One" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/gg/style.css">
   
@@ -17,7 +17,7 @@
         <li class="main_nav_item">
           <a class="main_nav_link" href="/gg/">Home</a>
         </li>
-        <li class="main_nav_item active">
+        <li class="main_nav_item">
           <a class="main_nav_link" href="/gg/workflow/">Workflows</a>
         </li>
         <li class="main_nav_item">
@@ -32,18 +32,35 @@
   </div>
   <div class="main">
     
-<h1 class="pagetitle">Workflows</h1><div class="list_intro_content">
-<p>This section details common ways to use gg in different situations.</p>
+<h1 class="pagetitle">gg branch</h1>
+<p class="command_usage">gg branch [-d] [-f] [-r REV] [NAME [...]]</p>
+<p class="command_synopsis">list or manage branches</p>
 
-</div>
 
 
-<ul class="page_list">
-  <li class="page_list_item"><a href="/gg/workflow/fork/">Fork and Pull</a></li>
 
-  <li class="page_list_item"><a href="/gg/workflow/gerrit/">Gerrit</a></li>
+<p>Branches are references to commits to help track lines of
+development. Branches are unversioned and can be moved, renamed, and
+deleted.</p>
 
-</ul>
+<p>Creating or updating to a branch causes it to be marked as active.
+When a commit is made, the active branch will advance to the new
+commit. A plain <code>gg update</code> will also advance an active branch, if
+possible. If the revision specifies a branch with an upstream, then
+any new branch will use the named branch&rsquo;s upstream.</p>
+
+<h2 id="flags">Flags</h2>
+
+<dl class="flag_list">
+    <dt>-d</dt>
+    <dt>-delete</dt>
+    <dd>delete the given branches</dd>
+    <dt>-f</dt>
+    <dt>-force</dt>
+    <dd>force</dd>
+    <dt>-r rev</dt>
+    <dd>revision to place branches on</dd>
+</dl>
 
 
   </div>

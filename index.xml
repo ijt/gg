@@ -12,6 +12,199 @@
     
     
     <item>
+      <title>gg add</title>
+      <link>https://zombiezen.github.io/gg/cmd/add/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/add/</guid>
+      <description>add also marks merge conflicts as resolved like git add.</description>
+    </item>
+    
+    <item>
+      <title>gg branch</title>
+      <link>https://zombiezen.github.io/gg/cmd/branch/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/branch/</guid>
+      <description>Branches are references to commits to help track lines of development. Branches are unversioned and can be moved, renamed, and deleted.
+Creating or updating to a branch causes it to be marked as active. When a commit is made, the active branch will advance to the new commit. A plain gg update will also advance an active branch, if possible. If the revision specifies a branch with an upstream, then any new branch will use the named branch&amp;rsquo;s upstream.</description>
+    </item>
+    
+    <item>
+      <title>gg clone</title>
+      <link>https://zombiezen.github.io/gg/cmd/clone/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/clone/</guid>
+      <description> Flags -b branch -branch branch branch to check out -gerrit install Gerrit hook -gerrit-hook-url string URL of hook script to download  </description>
+    </item>
+    
+    <item>
+      <title>gg commit</title>
+      <link>https://zombiezen.github.io/gg/cmd/commit/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/commit/</guid>
+      <description> Flags -amend amend the parent of the working directory -m message use text as commit message  </description>
+    </item>
+    
+    <item>
+      <title>gg diff</title>
+      <link>https://zombiezen.github.io/gg/cmd/diff/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/diff/</guid>
+      <description> Flags -b -ignore-space-change ignore changes in amount of whitespace -B -ignore-blank-lines ignore changes whose lines are all blank -c rev change made by revision -U string number of lines of context to show -r rev revision -stat output diffstat-style summary of changes -w -ignore-all-space ignore whitespace when comparing lines -Z -ignore-space-at-eol ignore changes in whitespace at EOL -M percent report new files with the set percentage of similarity to a removed file as renamed -C percent report new files with the set percentage of similarity as copied -copies-unmodified whether to check unmodified files when detecting copies (can be expensive)  </description>
+    </item>
+    
+    <item>
+      <title>gg evolve</title>
+      <link>https://zombiezen.github.io/gg/cmd/evolve/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/evolve/</guid>
+      <description> evolve compares HEAD with the ancestors of the given destination. If evolve finds any ancestors of the destination have the same Gerrit change ID as diverging ancestors of HEAD, it rebases the descendants of the latest shared change onto the corresponding commit in the destination.
+Flags -d ref -dst ref ref to compare with (defaults to upstream) -l -list list commits with match change IDs  </description>
+    </item>
+    
+    <item>
+      <title>gg gerrithook</title>
+      <link>https://zombiezen.github.io/gg/cmd/gerrithook/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/gerrithook/</guid>
+      <description> The Gerrit change ID hook is a commit message hook which automatically inserts a globally unique Change-Id tag in the footer of a commit message.
+gerrithook downloads the hook script from a public Gerrit server.
+More details at https://gerrit-review.googlesource.com/hooks/commit-msg
+Flags -url string URL of hook script to download  </description>
+    </item>
+    
+    <item>
+      <title>gg histedit</title>
+      <link>https://zombiezen.github.io/gg/cmd/histedit/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/histedit/</guid>
+      <description>This command lets you interactively edit a linear series of commits. When starting histedit, it will open your editor to plan the series of changes you want to make. You can reorder commits, or use the actions listed in the plan comments.
+Unlike git rebase -i, continuing a histedit will automatically amend the current commit if any changes are made. In most cases, you do not need to run commit --amend yourself.</description>
+    </item>
+    
+    <item>
+      <title>gg init</title>
+      <link>https://zombiezen.github.io/gg/cmd/init/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/init/</guid>
+      <description>If no directory is given, the current directory is used.</description>
+    </item>
+    
+    <item>
+      <title>gg log</title>
+      <link>https://zombiezen.github.io/gg/cmd/log/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/log/</guid>
+      <description> Flags -follow follow file history across copies and renames -follow-first only follow the first parent of merge commits -graph -G show the revision DAG -r rev show the specified revision or range -reverse reverse order of commits -stat include diffstat-style summary of each commit  </description>
+    </item>
+    
+    <item>
+      <title>gg mail</title>
+      <link>https://zombiezen.github.io/gg/cmd/mail/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/mail/</guid>
+      <description> Flags -allow-dirty allow mailing when working copy has uncommitted changes -d branch -dest branch -for branch destination branch -r rev source revision -R email -reviewer email reviewer email -CC email -cc email emails to CC -notify string who to send email notifications to; one of &amp;#34;none&amp;#34;, &amp;#34;owner&amp;#34;, &amp;#34;owner_reviewers&amp;#34;, or &amp;#34;all&amp;#34; -notify-to email email to send notification -notify-cc email email to CC notification -notify-bcc email email to BCC notification -m message use text as comment message -p -publish-comments publish draft comments  </description>
+    </item>
+    
+    <item>
+      <title>gg merge</title>
+      <link>https://zombiezen.github.io/gg/cmd/merge/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/merge/</guid>
+      <description> Flags -r rev revision to merge -abort abort the ongoing merge  </description>
+    </item>
+    
+    <item>
+      <title>gg pull</title>
+      <link>https://zombiezen.github.io/gg/cmd/pull/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/pull/</guid>
+      <description>The fetched reference is written to FETCH_HEAD.
+If no source repository is given and a branch with a remote tracking branch is currently checked out, then that remote is used. Otherwise, the remote called &amp;ldquo;origin&amp;rdquo; is used.
+If no remote reference is given and a branch is currently checked out, then the branch&amp;rsquo;s remote tracking branch is used or the branch with the same name if the branch has no remote tracking branch.</description>
+    </item>
+    
+    <item>
+      <title>gg push</title>
+      <link>https://zombiezen.github.io/gg/cmd/push/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/push/</guid>
+      <description>When no destination repository is given, push uses the first non- empty configuration value of:
+ branch.*.pushRemote, if the source is a branch or is part of only one branch. remote.pushDefault. branch.*.remote, if the source is a branch or is part of only one branch. Otherwise, the remote called origin is used.  If -d is given and begins with refs/, then it specifies the remote ref to update. If the argument passed to -d does not begin with refs/, it is assumed to be a branch name (refs/heads/&amp;lt;arg&amp;gt;).</description>
+    </item>
+    
+    <item>
+      <title>gg rebase</title>
+      <link>https://zombiezen.github.io/gg/cmd/rebase/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/rebase/</guid>
+      <description> Rebasing will replay a set of changes on top of the destination revision and set the current branch to the final revision.
+If neither --src or --base is specified, it acts as if --base=@{upstream} was specified.
+Flags -base rev rebase everything from branching point of specified revision -dst rev rebase onto the specified revision -src rev rebase the specified revision and descendants -abort abort an interrupted rebase -continue continue an interrupted rebase  </description>
+    </item>
+    
+    <item>
+      <title>gg remove</title>
+      <link>https://zombiezen.github.io/gg/cmd/remove/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/remove/</guid>
+      <description> Flags -after record delete for missing files -f -force forget added files, delete modified files -r remove files under any directory specified  </description>
+    </item>
+    
+    <item>
+      <title>gg revert</title>
+      <link>https://zombiezen.github.io/gg/cmd/revert/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/revert/</guid>
+      <description> Flags -all revert all changes when no arguments given -r rev revert to specified revision  </description>
+    </item>
+    
+    <item>
+      <title>gg status</title>
+      <link>https://zombiezen.github.io/gg/cmd/status/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/status/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gg update</title>
+      <link>https://zombiezen.github.io/gg/cmd/update/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/update/</guid>
+      <description> Flags -m -merge merge uncommitted changes -r rev revision  </description>
+    </item>
+    
+    <item>
+      <title>gg upstream</title>
+      <link>https://zombiezen.github.io/gg/cmd/upstream/</link>
+      <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/upstream/</guid>
+      <description> If no positional arguments are given, the branch&amp;rsquo;s upstream branch is printed to stdout (defaulting to the current branch if none given).
+If a ref argument is given, then the branch&amp;rsquo;s upstream branch (specified by branch.*.remote and branch.*.merge configuration settings) will be set to the given value.
+Flags -b branch branch to query or modify  </description>
+    </item>
+    
+    <item>
       <title>Fork and Pull</title>
       <link>https://zombiezen.github.io/gg/workflow/fork/</link>
       <pubDate>Thu, 21 Jun 2018 13:29:21 -0700</pubDate>
