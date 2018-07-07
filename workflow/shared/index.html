@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shared Repository - gg</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Patua+One" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/gg/style.css">
+  
+</head>
+<body class="page">
+  <div class="top">
+    <h1 class="site_title"><a class="site_title_link" href="/">gg</a></h1>
+    <div class="subtitle">Git like Mercurial</div>
+    <nav class="main_nav">
+      <ul class="main_nav_list">
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="/gg/">Home</a>
+        </li>
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="/gg/workflow/">Workflows</a>
+        </li>
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="/gg/cmd/">Commands</a>
+        </li>
+        <li class="main_nav_item">
+          <a class="main_nav_link" href="https://github.com/zombiezen/gg">GitHub</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    
+<h1 class="pagetitle">Shared Repository</h1>
+
+
+<p>gg supports the <a href="https://help.github.com/articles/about-collaborative-development-models/">shared repository model</a> of development used by
+individuals and smaller teams. In this workflow, the source of truth is a single
+shared repository. Each developer clones to a repository on their own machine
+and makes their changes. When they are ready to share, they push to a branch on
+the single shared repository. If they are using pull requests, each change goes
+onto a <a href="https://help.github.com/articles/about-branches/">branch</a>, which then gets reviewed. Otherwise, usually commits go
+directly to the default branch (usually <code>master</code>).</p>
+
+<h2 id="cloning">Cloning</h2>
+
+<p>When setting up your working copy, you will first clone the repository.</p>
+
+<pre><code class="language-shell">gg clone https://example.com/foo.git
+cd foo
+</code></pre>
+
+<p>Replace the URL as needed.</p>
+
+<h2 id="making-changes-directly-to-the-default-branch">Making Changes Directly to the Default Branch</h2>
+
+<p>If you are working by yourself or your team does not use pull requests, you will
+typically make changes directly to the default branch (usually <code>master</code>).</p>
+
+<pre><code class="language-shell"># hack hack hack
+gg commit -m &quot;Added a feature&quot;
+gg push
+</code></pre>
+
+<p>If the push fails because someone else pushed commits while you were working,
+you can rebase your commits on top of the new commits.</p>
+
+<pre><code class="language-shell">gg pull &amp;&amp; gg rebase
+</code></pre>
+
+<h2 id="making-changes-on-a-feature-branch">Making Changes on a Feature Branch</h2>
+
+<p>In a pull request workflow, every change should be on a separate branch. <code>gg
+branch</code> will automatically handle setting the branch&rsquo;s upstream, which is used
+for determining the default branch for merges and rebases.</p>
+
+<pre><code class="language-shell">gg branch myfeature
+# hack hack hack
+gg commit -m &quot;Added a feature&quot;
+gg push
+</code></pre>
+
+<p>To make changes after code review, simply push more commits to your branch and
+run <code>gg push</code> again.</p>
+
+<pre><code class="language-shell"># hack hack hack
+gg commit -m &quot;Addressed code review comments&quot;
+gg push
+</code></pre>
+
+<h3 id="syncing-your-work-with-the-upstream-branch">Syncing Your Work with the Upstream Branch</h3>
+
+<p>If the upstream branch (usually <code>master</code>) changed, then you can use <code>gg merge</code>
+to merge in commits.</p>
+
+<pre><code class="language-shell">gg pull &amp;&amp; gg merge
+</code></pre>
+
+<p>If there are no conflicts or test breakages, you can run <code>gg commit</code> to commit
+the merge.</p>
+
+<h3 id="syncing-your-work-with-your-feature-branch">Syncing Your Work with your Feature Branch</h3>
+
+<p>If your feature branch changes (for example, if another team member adds
+commits), then first you need to download the new commits from your fork using
+<code>gg pull</code>.</p>
+
+<pre><code class="language-shell">gg pull -r CURRENT_BRANCH
+</code></pre>
+
+<p>Replace <code>CURRENT_BRANCH</code> with the name of your current branch.</p>
+
+<p>Once you&rsquo;ve downloaded the commits, you will need to either merge or rebase your
+local commits. Merging will create a new commit that merges the two streams of
+work, whereas rebasing will recreate your changes on top of the downloaded
+commits.</p>
+
+<p>To create a merge commit:</p>
+
+<pre><code class="language-shell">gg merge FETCH_HEAD
+# Resolve any conflicts, run tests.
+gg commit
+</code></pre>
+
+<p>Or to rebase your commits onto the downloaded changes:</p>
+
+<pre><code class="language-shell">gg rebase -base=FETCH_HEAD -dst=FETCH_HEAD
+</code></pre>
+
+<h3 id="switching-among-changes">Switching Among Changes</h3>
+
+<p>You can list all of your branches with:</p>
+
+<pre><code class="language-shell">gg branch
+</code></pre>
+
+<p>You can use <code>gg update</code> to switch to a different branch.</p>
+
+<pre><code class="language-shell">gg update myfeature
+gg update master
+</code></pre>
+
+
+  </div>
+  <footer class="pagefooter">
+    <p>Copyright &copy; 2018 Google LLC</p>
+    <p>gg is not an official Google product. All content released under an <a href="https://github.com/zombiezen/gg/blob/master/LICENSE" target="_blank">Apache 2.0 License</a>.</p>
+  </footer>
+</body>
+</html>
