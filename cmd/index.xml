@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>gg cat</title>
+      <link>https://zombiezen.github.io/gg/cmd/cat/</link>
+      <pubDate>Tue, 10 Jul 2018 22:01:45 -0700</pubDate>
+      
+      <guid>https://zombiezen.github.io/gg/cmd/cat/</guid>
+      <description>&lt;p&gt;output the current or given revision of files&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>gg add</title>
       <link>https://zombiezen.github.io/gg/cmd/add/</link>
       <pubDate>Fri, 06 Jul 2018 22:13:11 -0700</pubDate>
